@@ -1,0 +1,23 @@
+We have considered using Json-Server to mock our API services, json-server is a full fake REST API zero coding in less that 30 secs.
+To locally mock SchrodersLink external services follow the below steps:
+Download SLink Tester Framework
+Go To QE.TersterControlUnit > JsonServer Folder
+Run the following command
+
+json-server -w mocking.json
+
+
+Go To localhost:8000 and verify that schroderslink json-server is running
+To locally integrate SchrodersLink mocking services with ClientPortal_API follow the below steps:
+Download ClientPortalAPI repo
+Go to WebConfig.file and replace
+
+<add key="ReferenceApi.Url" value="https://localhost:44302/" /> to 
+
+<add key="ReferenceApi.Url" value="http://localhost:8000/" />
+
+Run Project locally
+To locally test SchrodersLink mocking services with ClientPortal_API follow the below steps:
+Use SLink Tester Framework
+Go to ClientPortalPublicApi.Config.json and ClientPortalInternalApi.Config.json file and replace BaseAddress with the ClientPortal API Local BaseAddress
+Run GetMyClientServiceTeamByPortfolio Test
